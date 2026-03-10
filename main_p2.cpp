@@ -63,6 +63,13 @@ int main() {
   C.multiply(A, B);
   cout << "Multiplicación de matrices A y B: " << endl;
   C.write();
-  
+
+  // MODIFICACION
+  matrix_t<int> D;
+  D.read();
+  cout << "Matriz D:" << endl;
+  D.write();
+  cout << "Submatriz diagonal inferior de D:" << endl;
+  D.inferior_diagonal();
   return 0;
 }

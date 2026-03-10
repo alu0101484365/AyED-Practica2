@@ -109,6 +109,12 @@ class matrix_t {
      */
     void read(istream& = cin);
 
+    // MODIFICACION
+    /**
+     * @brief Muestra por pantalla la submatriz diagonal inferior 
+     */
+    void inferior_diagonal(void);
+
   private:
 
     int m_, n_;   /// Número de filas y columnas
@@ -263,5 +269,17 @@ template<class T> void matrix_t<T>::multiply(const matrix_t<T>& A, const matrix_
       at(i,j) = T();
       for (int k = 1; k <= A.get_n(); k++) at(i,j) = at(i,j) + (A(i,k) * B(k,j));
     }
+  }
+}
+
+
+// MODIFICACION
+/**
+ * @brief Muestra por pantalla la submatriz diagonal inferior 
+ */
+template<class T> void matrix_t<T>::inferior_diagonal(void) {
+  for (int i = 2; i <= get_m(); ++i) {
+    for (int j = 1; j < i && j <= get_n(); ++j) cout << at(i, j) << "\t";
+    cout << endl;
   }
 }
